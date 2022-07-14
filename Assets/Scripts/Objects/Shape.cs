@@ -9,10 +9,11 @@ public class Shape : MonoBehaviour {
 
     private MeshRenderer shapeRenderer;
     
+    // ENCAPSULATION
     protected Color shapeColor;
-
     protected TextMeshProUGUI textObject { get; private set; }
-
+    
+    // ABSTRACTION
     protected void Init() {
         shapeRenderer = gameObject.GetComponent<MeshRenderer>();
         textObject = GameObject.Find("Text").GetComponent<TextMeshProUGUI>();
@@ -21,7 +22,8 @@ public class Shape : MonoBehaviour {
     public virtual void DisplayText() {
         textObject.SetText("Basic Shape");
     }
-
+    
+    // ABSTRACTION
     protected void showColor() {
         shapeRenderer.material.color = shapeColor;
     }
